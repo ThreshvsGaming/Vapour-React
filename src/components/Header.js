@@ -41,7 +41,7 @@ export default function Header({pageTitle, isHomeScreen}) {
     }
 
     function handleFocus(event) {
-        const unused = dropDownState[`${event.target.name}`] ? event.target.blur() : event.target.focus();
+        dropDownState[`${event.target.name}`] ? event.target.blur() : event.target.focus();
     }
 
     return (

@@ -25,7 +25,7 @@ export default function LibraryScreen() {
 
         setDisplayedGames(ownedGames);
         setDisplayedInfo(undefined);
-    }, [ownedGames]);
+    }, [ownedGames, allGames]);
 
     useEffect(() => {
         localStorage.setItem("RecentGames", JSON.stringify(recentGames))

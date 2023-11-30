@@ -1,7 +1,7 @@
 import React from 'react'
 import Header from "../components/Header";
 import homeStyles from "./HomeScreen.module.css"
-import {Outlet, Link} from 'react-router-dom'
+import {Link} from 'react-router-dom'
 
 function HomeScreen() {
     return (
