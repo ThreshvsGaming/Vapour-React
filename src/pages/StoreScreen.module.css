@@ -1,0 +1,24 @@
+.storeScreen {
+    position: relative;
+    height: 100%;
+    width: 100%;
+    /*background-color: navy;*/
+}
+
+.fixed_section {
+    display: flex;
+    position: relative;
+    width: 100%;
+    height: 2.18753em;
+    min-height: 2.18em;
+    overflow-y: clip;
+    /*background-color: grey;*/
+    background: linear-gradient(to right, rgba(51, 82, 147, 0.4), rgba(15, 19, 51, 0.8));
+}
+
+.section__current_section {
+    display: inline-block;
+    padding-top: 0.1em;
+    float: left;
+}
+

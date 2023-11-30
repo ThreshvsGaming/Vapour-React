@@ -1,0 +1,25 @@
+.game_info {
+    width: 100%;
+    height: 100%;
+}
+
+.game_thumbnail {
+    width: 100%;
+    object-fit: contain;
+}
+
+.play_btn {
+    margin: 1em;
+    width: 10em;
+    height: 3em;
+}
+
+.uninstall_btn {
+    margin: 1em;
+    width: 10em;
+    height: 3em;
+}
+
+.play_btn:hover, .uninstall_btn:hover {
+    background-color: grey;
+}

@@ -1,0 +1,21 @@
+.bubble {
+    padding: 0.2em 0.5em; /* Adjust the padding as needed */
+    border-radius: 15px; /* Set the border-radius to make it rounded */
+    display: inline-block; /* Make it an inline block so it wraps the content */
+    max-width: 75%; /* Set a maximum width if needed */
+    color: white;
+    font-size: 1.1em;
+    margin: 0.2em;
+}
+
+.received {
+    float: left;
+    clear: both;
+    background-color: #39393a; /* Set the background color */
+}
+
+.sent {
+    float: right;
+    clear: both;
+    background-color: #3656e8; /* Set the background color */
+}

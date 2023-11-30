@@ -1,0 +1,28 @@
+.scrollable_game_section_container {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    /*background-color: grey;*/
+}
+
+.scrollable_game_section {
+    display: grid;
+    flex-grow: 1;
+    overflow-y: auto;
+    height: 0;
+    padding-top: 1em;
+    grid-template-columns: repeat(auto-fill, minmax(170px, 1fr));
+    grid-template-rows: repeat(auto-fill, minmax(170px, 1fr));
+    column-gap: 8px;
+    background: linear-gradient(to right, rgba(16, 48, 117, 0.5), rgba(13, 17, 52, 0.9)) no-repeat fixed;
+    background-size: cover;
+}
+
+.all_games_tag {
+    height: 1.5626em;
+    min-height: 1.5626em;
+    display: flex;
+    padding-left: 0.6em;
+    background: linear-gradient(to right, rgba(79, 76, 76, 0.6), rgba(0, 0, 0, 0.3));
+}

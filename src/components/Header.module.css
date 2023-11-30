@@ -1,0 +1,105 @@
+.header {
+    display: flex;
+    position: relative;
+    min-height: 55px;
+    width: 100%;
+    height: 9%;
+    background-color: #1b2838;
+}
+
+.page_title {
+    position: absolute;
+    width: 6.25em;
+    left: 47.5%;
+    top: 18%;
+}
+
+#page_title:link, #page_title:visited {
+    text-align: center;
+    color: lavender;
+    text-decoration: none;
+}
+
+#page_title:hover {
+    color: white;
+    text-decoration: none;
+}
+
+.mui_icons {
+    width: 100%;
+    height: 100%;
+    font-size: 24px; /* Adjust the size as needed */
+    color: white; /* Set the color as needed */
+    pointer-events: none;
+}
+
+.dropdown_btn_container {
+    position: absolute;
+    width: 35px;
+    height: 35px;
+    top: 20%;
+    background-color: black;
+    display: inline-block;
+}
+
+.back_btn_container {
+    position: relative;
+    width: 35px;
+    height: 35px;
+    top: 20%;
+    background-color: black;
+    display: inline-block;
+}
+
+.dropdown_btn_container.profile {
+    right: 2px;
+}
+
+.dropdown_btn_container.menu {
+    right: 42px;
+}
+
+.dropdown_content {
+    position: absolute;
+    right: 0;
+    background-color: grey;
+    box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+    z-index: 1;
+}
+
+.dropdown_content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+.dropdown_btn_container a:hover {
+    background-color: #ddd;
+}
+
+.btns {
+    background-color: #171a21;
+    width: 100%;
+    height: 100%;
+    padding-top: 10%;
+    color: white;
+    cursor: pointer;
+}
+
+.dropdown_btns:hover {
+    background-color: rgba(134, 158, 211, 0.46);
+}
+
+.app_logo {
+    position: relative;
+    width: 2.7em;
+    height: 2.4em;
+    top: 17%;
+    left: 0;
+    display: inline-block;
+}
+
+.dropdown_btns:focus {
+    background-color: grey;
+}

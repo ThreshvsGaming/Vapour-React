@@ -1,0 +1,45 @@
+.card {
+    width: 98%;
+    position: relative;
+    display: flex;
+    padding: 0.625em;
+    border-bottom: 1px solid black;
+    border-radius: 0.6em;
+    cursor: pointer;
+    align-items: center;
+    transition: background-color 0.11s ease;
+}
+
+.card:hover {
+    background-color: #9d9c9c;
+}
+
+.time {
+    position: relative;
+    float: right;
+}
+
+.username {
+    display: inline-block;
+    float: left;
+}
+
+.avatar {
+    float: left;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    margin-right: 10px;
+}
+
+.friend_info {
+    padding: 1em;
+    border-radius: 8px;
+    flex-direction: column;
+    align-items: center;
+    flex-grow: 1;
+}
+
+.recent_message {
+    clear: both;
+}

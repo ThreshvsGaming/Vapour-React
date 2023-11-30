@@ -1,0 +1,63 @@
+.sort_btn, .filter_btn {
+    position: relative;
+    width: 100%;
+    /*background-color: black;*/
+    display: inline-block;
+}
+
+
+/*.mui_icons {*/
+/*    padding-top: 1px;*/
+/*    font-size: 24px; !* Adjust the size as needed *!*/
+/*    color: white; !* Set the color as needed *!*/
+/*    pointer-events: none;*/
+/*}*/
+
+.dropdown_btn_container {
+    background-color: white;
+    position: relative;
+    display: flex;
+    align-items: center;
+    height: 100%;
+    margin-left: 0.5em;
+
+    border: none;
+}
+
+.sort_label {
+    white-space: nowrap;
+}
+
+.sort_options {
+    border: none;
+}
+
+.dropdown_content {
+    position: relative;
+    width: 6.3em;
+    background-color: grey;
+    z-index: 1;
+    box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+}
+
+/*.dropdown_content p {*/
+/*    display: block;*/
+/*    padding: 12px 16px;*/
+/*    cursor: pointer;*/
+/*}*/
+
+/*.dropdown_content p:first-child {*/
+/*    font-style: italic;*/
+/*}*/
+
+/*.sort_btn:hover, .filter_btn:hover {*/
+/*    background-color: rgba(134, 158, 211, 0.46);*/
+/*}*/
+
+/*.dropdown_btn_container p:hover {*/
+/*    background-color: #ddd;*/
+/*}*/
+
+/*.sort_btn:focus, .filter_btn:focus {*/
+/*    background-color: grey;*/
+/*}*/

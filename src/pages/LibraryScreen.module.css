@@ -1,0 +1,37 @@
+.libraryScreen {
+    position: relative;
+    height: 100%;
+    width: 100%;
+}
+
+.fixed_section {
+    display: flex;
+    position: relative;
+    flex-direction: column;
+    width: 100%;
+    height: 15em;
+    min-height: 5em;
+    overflow-y: clip;
+    background: linear-gradient(to left, rgba(51, 82, 147, 0.6), rgba(15, 19, 51, 0.3));
+}
+
+.recent_games_tag {
+    clear: both;
+    margin-top: 1%;
+    display: block;
+    background: linear-gradient(to right, rgba(79, 76, 76, 0.6), rgba(0, 0, 0, 0.3));
+    padding-left: 0.6em;
+}
+
+.fixed_game_section {
+    padding-top: 0.6em;
+    display: grid;
+    position: relative;
+    grid-template-columns: repeat(auto-fill, minmax(170px, 1fr));
+    column-gap: 0.6em;
+}
+
+
+
+
+

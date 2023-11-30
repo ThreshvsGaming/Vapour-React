@@ -1,0 +1,32 @@
+.game_box {
+    display: flex;
+    flex-direction: column;
+    width: 160px;
+    height: 160px;
+    margin: 0 auto 1em 0.6em;
+    cursor: pointer;
+    background: linear-gradient(to left, rgba(235, 237, 241, 0.2), rgba(18, 26, 101, 0.5));
+    border-radius: 10px;
+    box-shadow: 5px 5px 8px rgba(0, 0, 0, 1);
+    overflow: hidden;
+    transition: transform 0.15s ease-in-out;
+}
+
+
+.game_thumbnail {
+    width: 100%;
+    flex-grow: 3;
+    padding: 0;
+    margin: 0;
+    object-fit: cover;
+}
+
+.game_title {
+    color: white;
+    flex-grow: 1;
+}
+
+.game_box:hover {
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.4);
+    transform: scale(1.05);
+}

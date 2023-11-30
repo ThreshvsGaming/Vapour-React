@@ -1,0 +1,43 @@
+.search_form_container {
+    display: flex;
+    position: relative; /*Don't make this absolute else, the add friends button would go behind it*/
+    min-height: 30px;
+    min-width: 250px;
+    width: 350px;
+    height: 35px;
+}
+
+.search_form {
+    position: relative;
+    height: 100%;
+    width: 100%;
+}
+
+.search_bar {
+    position: relative;
+    display: inline-block;
+    height: 100%;
+    width: 87%;
+    font-size: 1.3em;
+}
+
+.btns.search_btn {
+    position: relative;
+    height: 100%;
+    display: inline;
+    float: right;
+    background-color: #171a21;
+    width: 13%;
+}
+
+.mui_icons {
+    width: 100%;
+    height: 100%;
+    margin-top: 5px;
+    color: white; /* Set the color as needed */
+    pointer-events: none;
+}
+
+
+
+
