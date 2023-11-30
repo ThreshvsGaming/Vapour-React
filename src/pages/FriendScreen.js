@@ -7,15 +7,29 @@ import SearchBar from "../components/SearchBar";
 import slfCommon from "./Store_Library_Friends_Common.module.css"
 import friendStyles from "./FriendScreen.module.css"
 import FriendCard from "../components/FriendCard";
-
-import friends from "../data/FriendsDatabase";
 import TextBubble from "../components/TextBubble";
 
 export default function FriendScreen() {
     const [selectedFriend, setSelectedFriend] = useState({friend: null, selected: false})
-    const [displayedFriends, setDisplayedFriends] = useState(friends);
-    const [chatMessages, setChatMessages] = useState([]);
+    const [allFriends, setAllFriends] = useState(() => JSON.parse(localStorage.getItem("Friends")) || []);
+    const [displayedFriends, setDisplayedFriends] = useState(allFriends);
+    const [activeChat, setActiveChat] = useState([]);
     const [currText, setCurrText] = useState("")
+
+    useEffect(() => {
+        if (selectedFriend.selected) {
+            setAllFriends(prevFriends => prevFriends.map(friend => friend.id === selectedFriend.friend.id ? {
+                        ...friend, messages: activeChat
+                    } :
+                    friend
+            ))
+        }
+    }, [activeChat]);
+
+    useEffect(() => {
+        localStorage.setItem("Friends", JSON.stringify(allFriends));
+        setDisplayedFriends(allFriends)
+    }, [allFriends]);
 
     function selectAttachment() {
         document.getElementById('fileInput').click();
@@ -23,11 +37,11 @@ export default function FriendScreen() {
 
     function showChat(friend) {
         setSelectedFriend({friend: friend, selected: true});
-        setChatMessages(friend.messages);
+        setActiveChat(friend.messages);
     }
 
     function sortMessages(messages) {
-        return [...messages].sort((a, b) => a.time - b.time);
+        return [...messages].sort((a, b) => new Date(a.time) - new Date(b.time));
     }
 
     const searchFriends = (friends, text) => {
@@ -45,13 +59,16 @@ export default function FriendScreen() {
     }
 
     function handleSearch(text) {
-        setDisplayedFriends(searchFriends(friends, text));
+        setDisplayedFriends(searchFriends(allFriends, text));
     }
 
     function handleSend() {
-        document.getElementById("chat_input_textbox").value = "";
-        let messageObj = {sender: "", text: currText, time: Date.now()};
-        setChatMessages(prevChat => [...prevChat, messageObj])
+        if (currText) {
+            document.getElementById("chat_input_textbox").value = "";
+            let messageObj = {sender: "", text: currText, time: Date.now()};
+            setActiveChat(prevChat => [...prevChat, messageObj])
+            setCurrText("");
+        }
     }
 
     return (
@@ -62,7 +79,9 @@ export default function FriendScreen() {
                     <div className={friendStyles.fixed_section}>
                         <SearchBar onInputChange={handleSearch}/>
                         <div className={friendStyles.add_friend_btn_container}>
-                            <button className={friendStyles.add_friend_btn} type="button">
+                            <button className={friendStyles.add_friend_btn} type="button" onClick={() =>
+                                alert("Let's be real, we don't have more than 2 friends..")
+                            }>
                                 <PersonAddAlt1RoundedIcon className={friendStyles.mui_icons}/>
                             </button>
                         </div>
@@ -77,16 +96,15 @@ export default function FriendScreen() {
                 <div className={friendStyles.chat_section_container}>
                     {/*Username Header*/}
                     <div className={`${friendStyles.fixed_section} ${friendStyles.username_bar}`}>
-                        <h4>{selectedFriend.selected ? selectedFriend.friend.username : "Username appears here"}</h4>
+                        <h3>{selectedFriend.selected ? selectedFriend.friend.username : "Username appears here"}</h3>
                     </div>
 
                     {/*Text messages*/}
                     {selectedFriend.selected ?
                         <div className={friendStyles.chat_section} id="chat-box">
                             {
-                                // sortMessages(selectedFriend.friend.messages);
-                                chatMessages.map(message => <TextBubble
-                                    key={message.id} message={message}/>)
+                                sortMessages(activeChat).map((message, index) => <TextBubble
+                                    key={index} message={message}/>)
                             }
                         </div>
                         : <div className={friendStyles.default_chat_section} id="chat-box"><p>

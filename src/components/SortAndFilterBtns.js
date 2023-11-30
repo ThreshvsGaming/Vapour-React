@@ -1,9 +1,7 @@
 import React, {useEffect, useState} from "react";
-import SortRoundedIcon from '@mui/icons-material/SortRounded';
 import sortAndFilterBtnStyles from './SortAndFilterBtn.module.css'
-import FilterListRoundedIcon from "@mui/icons-material/FilterListRounded";
 
-export default function SortAndFilterBtns({onSort, sortState}) {
+export default function SortAndFilterBtns({onSort, sortState, storeScreen}) {
     const [sortLabel, setSortLabel] = useState("");
     // Reset the child state when resetState changes
     useEffect(() => {
@@ -12,11 +10,14 @@ export default function SortAndFilterBtns({onSort, sortState}) {
     }, [sortState]);
 
     const sortOptions = [
-        {label: "(none)", value: ""},
-        {label: "A-Z", value: "az"},
-        {label: "Z-A", value: "za"},
-        {label: "Rating(high to low)", value: "rating-hl"},
-        {label: "Price(low to high)", value: "price-lh"},
+        {label: "(none)", value: "", storeProp: true, libProp: true},
+        {label: "A-Z", value: "az", storeProp: true, libProp: true},
+        {label: "Z-A", value: "za", storeProp: true, libProp: true},
+        {label: "Most played", value: "mp", libProp: true},
+        {label: "Rating(high to low)", value: "rating-hl", storeProp: true},
+        {label: "Rating(low to high)", value: "rating-lh", storeProp: true},
+        {label: "Price(high to low)", value: "price-hl", storeProp: true},
+        {label: "Price(low to high)", value: "price-lh", storeProp: true},
     ];
 
     function handleSort(e) {
@@ -31,11 +32,18 @@ export default function SortAndFilterBtns({onSort, sortState}) {
                 <select id="sortBy" className={sortAndFilterBtnStyles.sort_btn} title="Sort by..."
                         onChange={(e) => handleSort(e)}
                         value={sortLabel}>
-                    {sortOptions.map(sortOption =>
-                        (<option className={sortAndFilterBtnStyles.sort_options} key={sortOption.label}
-                                 value={sortOption.value}>
-                            {sortOption.label}
-                        </option>))}
+                    {
+                        storeScreen ? sortOptions.filter(option => option.storeProp === true).map(sortOption =>
+                                (<option className={sortAndFilterBtnStyles.sort_options} key={sortOption.label}
+                                         value={sortOption.value}>
+                                    {sortOption.label}
+                                </option>)) :
+                            sortOptions.filter(option => option.libProp === true).map(sortOption =>
+                                (<option className={sortAndFilterBtnStyles.sort_options} key={sortOption.label}
+                                         value={sortOption.value}>
+                                    {sortOption.label}
+                                </option>))
+                    }
                 </select>
             </div>
         </>

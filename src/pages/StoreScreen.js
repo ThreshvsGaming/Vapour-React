@@ -14,7 +14,6 @@ export default function StoreScreen() {
     const [ownedGames, setOwnedGames] = useState(() => JSON.parse(localStorage.getItem("OwnedGames")) || []);
     const [displayedGames, setDisplayedGames] = useState(allGames);
     const [displayedInfo, setDisplayedInfo] = useState();
-    // const [backgroundImage, setBackgroundImage] = useState('')
 
     // Save data to localStorage whenever storedData changes
     useEffect(() => {
@@ -61,10 +60,14 @@ export default function StoreScreen() {
             sortedGames.sort((a, b) => a.title.localeCompare(b.title));
         } else if (value === 'za') {
             sortedGames.sort((a, b) => b.title.localeCompare(a.title));
+        } else if (value === "rating-lh") {
+            sortedGames.sort((a, b) => a.ratings - b.ratings);
         } else if (value === "rating-hl") {
             sortedGames.sort((a, b) => b.ratings - a.ratings);
+        } else if (value === "price-hl") {
+            sortedGames.sort((a, b) => b.price - a.price);
         } else if (value === "price-lh") {
-            sortedGames.sort((a, b) => b.ratings - a.ratings);
+            sortedGames.sort((a, b) => a.price - b.price);
         } else {
             revertToDefaultView();
             return;
@@ -80,7 +83,6 @@ export default function StoreScreen() {
         setDisplayedGames(searchGames(allGames, text));
     }
     const displayInfo = (clickedGame) => {
-        // setBackgroundImage(`url(${process.env.PUBLIC_URL + clickedGame.image})`);
         setDisplayedInfo(clickedGame);
     }
 
@@ -95,7 +97,7 @@ export default function StoreScreen() {
                     <div className={slCommon.all_games_tag}>
                         <h3 className={storeStyles.section__current_section}>All games</h3>
                         <SortAndFilterBtns
-                            onSort={applySort}
+                            onSort={applySort} storeScreen={true}
                         />
                     </div>
                     <div className={slCommon.scrollable_game_section}>
@@ -115,6 +117,7 @@ export default function StoreScreen() {
                                                        play={() => {
                                                            alert("You really thought you were going to play it for free? Bruh");
                                                        }}
+                                                       storeScreen={true}
                                                        uninstall={displayedInfo.owned ? uninstall : () => {
                                                        }}/>
                         }

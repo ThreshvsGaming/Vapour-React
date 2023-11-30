@@ -8,13 +8,16 @@ function HomeScreen() {
         <div className={homeStyles.homeScreen}>
             <Header pageTitle="Home" isHomeScreen={true}/>
             <div className={homeStyles.content_section}>
-                <div id="store-btn"><Link className={homeStyles.nav_btn} to="/Store"
-                                          target="_self">Store</Link></div>
-                <div id="library-btn"><Link className={homeStyles.nav_btn} to="/Library" target="_self">Game
+                <div id="store-btn" className={homeStyles.store_btn}><Link className={homeStyles.nav_btn} to="/Store"
+                                                                           target="_self">Store</Link></div>
+                <div id="library-btn" className={homeStyles.library_btn}><Link
+                    className={homeStyles.nav_btn}
+                    to="/Library" target="_self">Game
                     Library</Link>
                 </div>
-                <div id="friends-btn"><Link className={homeStyles.nav_btn} to="/Friends"
-                                            target="_self">Friends</Link></div>
+                <div id="friends-btn" className={homeStyles.friends_btn}><Link className={homeStyles.nav_btn}
+                                                                               to="/Friends"
+                                                                               target="_self">Friends</Link></div>
             </div>
         </div>
     );

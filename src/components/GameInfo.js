@@ -1,7 +1,7 @@
 import React from "react";
 import gameInfoStyles from "./GameInfo.module.css"
 
-export default function GameInfo({game, uninstall, purchase, play}) {
+export default function GameInfo({game, uninstall, purchase, play, storeScreen, libScreen}) {
     return (
         <div className={gameInfoStyles.game_info}>
             <img className={gameInfoStyles.game_thumbnail} src={process.env.PUBLIC_URL + game.image}
@@ -22,8 +22,11 @@ export default function GameInfo({game, uninstall, purchase, play}) {
                 {<h3>Uninstall</h3>}
             </button>}
             <h4>Publisher: {game.publisher}</h4>
-            <h4>Rating: {game.ratings}/100</h4><br/>
-            <h4 style={{textDecoration:"underline"}}>Description</h4>
+            {libScreen && <h4>Hours played: {game.hoursPlayed} hours</h4>}
+            {storeScreen && <h4>Rating: {game.ratings}/100</h4>}
+            {storeScreen && <h4>Price: {game.price}$</h4>}
+            <br/>
+            <h4 style={{textDecoration: "underline"}}>Description</h4>
             <p>{game.description}</p>
         </div>
     );

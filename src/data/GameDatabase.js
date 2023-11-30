@@ -1048,7 +1048,7 @@ const games = [
 
     },
     {
-        title: '``Clicker Heroes 2',
+        title: 'Clicker Heroes 2',
         publisher: 'Playsaurus',
         genre: 'Simulator',
         description:
@@ -1152,13 +1152,7 @@ export default games;
 //
 //     let max = 1000;
 //
-//     for (let i = 0; i < games.length; i++) {
-//         if (games[i].owned) {
-//             games[i].playerHours = Math.floor(Math.random() * max);
-//         } else {
-//             games[i].playerHours = 0;
-//         }
-//     }
+
 //
 //
 //

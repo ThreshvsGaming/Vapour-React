@@ -72,11 +72,9 @@ export default function LibraryScreen() {
             sortedGames.sort((a, b) => a.title.localeCompare(b.title));
         } else if (value === 'za') {
             sortedGames.sort((a, b) => b.title.localeCompare(a.title));
-        } else if (value === "rating-hl") {
-            sortedGames.sort((a, b) => b.ratings - a.ratings);
-        } else if (value === "price-lh") {
-            sortedGames.sort((a, b) => b.ratings - a.ratings);
-        } else if (value === "") {
+        } else if (value === "mp") {
+            sortedGames.sort((a, b) => b.hoursPlayed - a.hoursPlayed);
+        } else {
             revertToDefaultView();
             return;
         }
@@ -90,7 +88,7 @@ export default function LibraryScreen() {
             if (prevRecent.some(eachGame => eachGame.id === game.id)) {
                 recentGames = [game, ...(prevRecent.filter(eachGame => eachGame.id !== game.id))]
             } else {
-                recentGames = [game, ...(prevRecent.slice(0, 5))];
+                recentGames = [game, ...(prevRecent.slice(0))];
             }
             return recentGames;
         })
@@ -120,7 +118,7 @@ export default function LibraryScreen() {
                     <div className={slCommon.scrollable_game_section_container}>
                         <div className={slCommon.all_games_tag}><h3>All Games</h3>
                             <SortAndFilterBtns
-                                onSort={applySort} sortState={sortState}
+                                onSort={applySort} sortState={sortState} storeScreen={false}
                             /></div>
                         <div className={slCommon.scrollable_game_section}>
                             {displayedGames.length > 0 ? displayedGames.map(game => <GameBox
@@ -138,6 +136,7 @@ export default function LibraryScreen() {
                         <div className="game-info">
                             {displayedInfo && <GameInfo game={displayedInfo}
                                                         play={handleRecent}
+                                                        libScreen={true}
                                                         uninstall={displayedInfo.owned ? uninstall : () => {
                                                         }}/>}
                             {/*:*/}

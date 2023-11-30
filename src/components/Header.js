@@ -76,10 +76,18 @@ export default function Header({pageTitle, isHomeScreen}) {
                     <PersonRoundedIcon className={headerStyles.mui_icons}/>
                 </button>
                 {dropDownState.profile && <div id="profileDropdown" className={headerStyles.dropdown_content}>
-                    <Link to="">Account</Link>
-                    <Link to="">Inventory</Link>
-                    <Link to="">Achievements</Link>
-                    <Link to="">Log out</Link>
+                    <Link to="" onClick={() => {
+                        alert("You know what you are..")
+                    }}>Account</Link>
+                    <Link to="" onClick={() => {
+                        alert("What did you even expect to see here?")
+                    }}>Inventory</Link>
+                    <Link to="" onClick={() => {
+                        alert("You've achieved everything humanly possible, Good job!!")
+                    }}>Achievements</Link>
+                    <Link to="" onClick={() => {
+                        alert("Just close the app if you're done, you don't want to type your login details again, trust.")
+                    }}>Log out</Link>
                 </div>}
             </div>
 
@@ -96,12 +104,16 @@ export default function Header({pageTitle, isHomeScreen}) {
                 </button>
                 {
                     dropDownState.menu && <div id="menuDropdown" className={headerStyles.dropdown_content}>
-                        {location.pathname !== "/Home" && <Link to="/">Home</Link>}
+                        {(location.pathname !== "/home" && location.pathname !== "/") && <Link to="/">Home</Link>}
                         {location.pathname !== "/Store" && <Link to="/Store">Store</Link>}
                         {location.pathname !== "/Library" && <Link to="/Library">Library</Link>}
                         {location.pathname !== "/Friends" && <Link to="/Friends">Friends</Link>}
-                        {location.pathname !== "/Notifications" && <Link to="">Notifications</Link>}
-                        {location.pathname !== "/Settings" && <Link to="">Settings</Link>}
+                        {location.pathname !== "/Notifications" && <Link to="" onClick={() => {
+                            alert("We'll text you if anything comes up..")
+                        }}>Notifications</Link>}
+                        {location.pathname !== "/Settings" && <Link to="" onClick={() => {
+                            alert("What could you possibly what to change in this iconic app?")
+                        }}>Settings</Link>}
                     </div>
                 }
             </div>
