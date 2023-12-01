@@ -80,7 +80,7 @@ export default function FriendScreen() {
                         <SearchBar onInputChange={handleSearch}/>
                         <div className={friendStyles.add_friend_btn_container}>
                             <button className={friendStyles.add_friend_btn} type="button" onClick={() =>
-                                alert("Let's be real, we don't have more than 2 friends..")
+                                alert("Let's be real, we don't have more than 6 friends..")
                             }>
                                 <PersonAddAlt1RoundedIcon className={friendStyles.mui_icons}/>
                             </button>
