@@ -11,14 +11,3 @@ export const searchGames = (games, text) => {
     }
     return games;
 }
-
-// export const filterGamesByGenre = (games, genre) => {
-//     let filterResults = [];
-//     if (genre.length > 0) {
-//         for (let i = 0; i < games.length; i++) {
-//             if (games[i].title.match(inputValueRegex)) {
-//                 searchResults.push(games[i]);
-//             }
-//         }
-//     }
-// }
