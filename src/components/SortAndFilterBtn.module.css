@@ -1,26 +1,16 @@
 .sort_btn, .filter_btn {
     position: relative;
     width: 100%;
-    /*background-color: black;*/
     display: inline-block;
 }
 
-
-/*.mui_icons {*/
-/*    padding-top: 1px;*/
-/*    font-size: 24px; !* Adjust the size as needed *!*/
-/*    color: white; !* Set the color as needed *!*/
-/*    pointer-events: none;*/
-/*}*/
-
 .dropdown_btn_container {
-    background-color: white;
+    background-color: transparent;
     position: relative;
     display: flex;
     align-items: center;
     height: 100%;
-    margin-left: 0.5em;
-
+    margin-left: 2.3em;
     border: none;
 }
 

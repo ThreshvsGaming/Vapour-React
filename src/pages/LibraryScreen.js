@@ -106,7 +106,7 @@ export default function LibraryScreen() {
                     <div className={libraryStyles.fixed_section}>
                         <SearchBar onInputChange={handleSearch}/>
                         <div className={libraryStyles.recent_games_tag}>
-                            <h3>Recent Games</h3>
+                            <h3 style={{color: "white"}}>Recent Games</h3>
                         </div>
                         <div className={libraryStyles.fixed_game_section}>
                             {recentGames.map(game => <GameBox

@@ -8,10 +8,11 @@
     cursor: pointer;
     align-items: center;
     transition: background-color 0.11s ease;
+    color: white;
 }
 
 .card:hover {
-    background-color: #9d9c9c;
+    background-color: #1b2838;
 }
 
 .time {

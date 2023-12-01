@@ -20,9 +20,11 @@
 }
 
 .all_games_tag {
+    color: white;
     height: 1.5626em;
     min-height: 1.5626em;
     display: flex;
     padding-left: 0.6em;
-    background: linear-gradient(to right, rgba(79, 76, 76, 0.6), rgba(0, 0, 0, 0.3));
+    /*background: linear-gradient(to right, rgba(79, 76, 76, 0.6), rgba(0, 0, 0, 0.3));*/
+    background-color: #1b2838;
 }

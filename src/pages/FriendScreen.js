@@ -96,7 +96,7 @@ export default function FriendScreen() {
                 <div className={friendStyles.chat_section_container}>
                     {/*Username Header*/}
                     <div className={`${friendStyles.fixed_section} ${friendStyles.username_bar}`}>
-                        <h3>{selectedFriend.selected ? selectedFriend.friend.username : "Username appears here"}</h3>
+                        <h3 style={{color:"white"}}>{selectedFriend.selected ? selectedFriend.friend.username : "Username appears here"}</h3>
                     </div>
 
                     {/*Text messages*/}

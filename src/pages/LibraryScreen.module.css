@@ -19,7 +19,8 @@
     clear: both;
     margin-top: 1%;
     display: block;
-    background: linear-gradient(to right, rgba(79, 76, 76, 0.6), rgba(0, 0, 0, 0.3));
+    /*background: linear-gradient(to right, rgba(79, 76, 76, 0.6), rgba(0, 0, 0, 0.3));*/
+    background-color: #1b2838;
     padding-left: 0.6em;
 }
 

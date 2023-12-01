@@ -12,7 +12,7 @@
     height: 2.18753em;
     min-height: 2.18em;
     overflow-y: clip;
-    background-color: grey;
+    background-color: #354962;
 }
 
 .friends_list_section {
@@ -100,7 +100,7 @@
 .default_chat_section p {
     color: white;
     font-size: 1.2em;
-    background-color: #24245d;
+    background-color: #354962;
     border-radius: 1.875em;
     padding: 0.2em 0.5em;
 }
