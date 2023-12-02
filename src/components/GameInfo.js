@@ -4,7 +4,7 @@ import gameInfoStyles from "./GameInfo.module.css"
 export default function GameInfo({game, uninstall, purchase, play, storeScreen, libScreen}) {
     return (
         <div className={gameInfoStyles.game_info}>
-            <img className={gameInfoStyles.game_thumbnail} src={process.env.PUBLIC_URL + game.image}
+            <img className={gameInfoStyles.game_thumbnail} src={game.image}
                  alt={game.title}/>
             <h1> {game.title} </h1>
             {game.owned ? <button className={gameInfoStyles.play_btn} onClick={() => {

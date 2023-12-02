@@ -77,16 +77,16 @@ export default function Header({pageTitle, isHomeScreen}) {
                 </button>
                 {dropDownState.profile && <div id="profileDropdown" className={headerStyles.dropdown_content}>
                     <Link to="" onClick={() => {
-                        alert("You know what you are..")
+                        alert("This hasn't been implemented..")
                     }}>Account</Link>
                     <Link to="" onClick={() => {
-                        alert("What did you even expect to see here?")
+                        alert("This hasn't been implemented..")
                     }}>Inventory</Link>
                     <Link to="" onClick={() => {
-                        alert("You've achieved everything humanly possible, Good job!!")
+                        alert("This hasn't been implemented..")
                     }}>Achievements</Link>
                     <Link to="" onClick={() => {
-                        alert("Just close the app if you're done, you don't want to type your login details again, trust.")
+                        alert("This hasn't been implemented..")
                     }}>Log out</Link>
                 </div>}
             </div>
@@ -112,7 +112,7 @@ export default function Header({pageTitle, isHomeScreen}) {
                             alert("We'll text you if anything comes up..")
                         }}>Notifications</Link>}
                         {location.pathname !== "/Settings" && <Link to="" onClick={() => {
-                            alert("What could you possibly what to change in this iconic app?")
+                            alert("This hasn't been implemented..")
                         }}>Settings</Link>}
                     </div>
                 }

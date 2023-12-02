@@ -1,10 +1,10 @@
 import friendCardStyles from "./FriendCard.module.css"
 
 export default function FriendCard({thisFriend, recentMessage, showChat}) {
-   let dateTime = new Date(recentMessage.time)
+    let dateTime = new Date(recentMessage.time)
     return (
         <div className={friendCardStyles.card} onClick={() => showChat(thisFriend)}>
-            <img className={friendCardStyles.avatar} src={process.env.PUBLIC_URL + thisFriend.image}
+            <img className={friendCardStyles.avatar} src={thisFriend.image}
                  alt={`${thisFriend.username}_logo`}/>
             <div className={friendCardStyles.friend_info}>
                 <h3 className={friendCardStyles.username}> {thisFriend.username} </h3>

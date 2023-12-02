@@ -80,7 +80,7 @@ export default function FriendScreen() {
                         <SearchBar onInputChange={handleSearch}/>
                         <div className={friendStyles.add_friend_btn_container}>
                             <button className={friendStyles.add_friend_btn} type="button" onClick={() =>
-                                alert("Let's be real, we don't have more than 6 friends..")
+                                alert("This hasn't been implemented.")
                             }>
                                 <PersonAddAlt1RoundedIcon className={friendStyles.mui_icons}/>
                             </button>
@@ -96,7 +96,7 @@ export default function FriendScreen() {
                 <div className={friendStyles.chat_section_container}>
                     {/*Username Header*/}
                     <div className={`${friendStyles.fixed_section} ${friendStyles.username_bar}`}>
-                        <h3 style={{color:"white"}}>{selectedFriend.selected ? selectedFriend.friend.username : "Username appears here"}</h3>
+                        <h3 style={{color: "white"}}>{selectedFriend.selected ? selectedFriend.friend.username : "Username appears here"}</h3>
                     </div>
 
                     {/*Text messages*/}

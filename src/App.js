@@ -6,7 +6,7 @@ import Home from './pages/HomeScreen'
 import Friends from './pages/FriendScreen'
 import Store from "./pages/StoreScreen"
 import Library from "./pages/LibraryScreen";
-import {BrowserRouter, Routes, Route} from "react-router-dom";
+import {Routes, Route} from "react-router-dom";
 
 function App() {
     //Uncomment the next line and refresh the Home page of the app, then re-comment it, to reset the database
@@ -37,15 +37,13 @@ function App() {
     }, []); // Empty dependency array ensures this effect runs only once on mount
 
     return (
-        <BrowserRouter>
-            <Routes>
-                <Route path="/" element={<Home/>}/>
-                <Route path="/Home" element={<Home/>}/>
-                <Route path="/Friends" element={<Friends/>}/>
-                <Route path="/Store" element={<Store/>}/>
-                <Route path="/Library" element={<Library/>}/>
-            </Routes>
-        </BrowserRouter>
+        <Routes>
+            <Route path="/" element={<Home/>}/>
+            <Route path="/Home" element={<Home/>}/>
+            <Route path="/Friends" element={<Friends/>}/>
+            <Route path="/Store" element={<Store/>}/>
+            <Route path="/Library" element={<Library/>}/>
+        </Routes>
     );
 }
 

@@ -10,7 +10,7 @@ export default function GameBox({thisGame, displayGameInfo}) {
         thisGame &&
         <div onClick={displayGameInfo ? sendGameInfo : () => {
         }} className={GameBoxStyles.game_box}>
-            <img className={GameBoxStyles.game_thumbnail} src={process.env.PUBLIC_URL + thisGame.image}
+            <img className={GameBoxStyles.game_thumbnail} src={thisGame.image}
                  alt={thisGame.title}/>
             <p className={GameBoxStyles.game_title}>{thisGame.title}</p>
         </div>
